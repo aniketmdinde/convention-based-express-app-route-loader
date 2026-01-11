@@ -13,11 +13,11 @@ export async function loadRoutes(app, dir) {
     const absoluteFilePath = path.join(absoluteDirPath, file);
 
     let module;
-    
+
     try {
       module = await import(absoluteFilePath);
     } catch (error) {
-      console.warn(`⚠ Failed to load ${file} (${error})`);
+      console.warn(`❌ Failed route: load ${file} (${error})`);
       continue;
     }
 
@@ -30,7 +30,7 @@ export async function loadRoutes(app, dir) {
       app.use(module.default.basePath, module.default.router);
       console.log(`✓ Loaded route: ${module.default.basePath}`);
     } catch (error) {
-      console.warn(`⚠ Failed to load ${file} (${error})`);
+      console.warn(`❌ Failed route: ${file} (${error})`);
       continue;
     }
   }
