@@ -1,6 +1,6 @@
 # @aniketmdinde/convention-based-express-app-route-loader
 
-This is a learning project using which you can load routes dynamically in an express app.
+This is a learning project using which you can load routes dynamically in an express app without crashing and logging the routes which are loaded and which aren't.
 
 This is one of the projects which will help me creating a bigger project (my first npm package).
 
@@ -28,7 +28,7 @@ console.log(res);
 
 ```
 
-Success Output
+Successful route loading output
 ```
 ✓ Loaded route: /auth
 ✓ Loaded route: /users
@@ -36,7 +36,7 @@ Success Output
 
 
 
-Failed Output (route not able to add due to error but no crash)
+Failed route loading output (non crashing)
 ```
 ⚠ Skipped route: auth.routes.js (missing basePath or router)
 ❌ Failed route: load user.routes.js (SyntaxError: Unexpected token '}')
@@ -46,7 +46,6 @@ Failed Output (route not able to add due to error but no crash)
 This project helped me to learn core library features of `Node.js`.
 
 The following are my learnings:
-- fs module
-- how a template engine works
-- piping feature of template engine
-- Modularized and production ready code
+- readdir() function
+- how to dynamically import files in js and access defaults
+- proper logging along with error handling
