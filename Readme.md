@@ -17,15 +17,12 @@ The following are the features:
 ### <a name="loadRoutes"></a>Load Routes
 
 ```
-import { renderFile } from "./renderFile.js";
+import express from "express";
+import { loadRoutes } from "./loadRoutes.js";
 
-const res = await renderFile(
-    "./templates/user.tpl", 
-    { name: "aniket", platform: "express gen" }
-    
-)
-console.log(res);
+const app = express();
 
+await loadRoutes(app, "./src/routes");
 ```
 
 Successful route loading output
